@@ -18,7 +18,7 @@ def main():
     
     '''
          Given bam-readcount output
-          produces output is a set of tab
+          produces output is a set of comma
           delimited columns, indicating indels and snvs
 
     '''
