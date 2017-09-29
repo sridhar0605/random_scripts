@@ -1,7 +1,6 @@
 #Summarize the output of bam_readcount
-#OG script nickmiller-iit
-#edited Sridhar September 14 2017
 #https://github.com/genome/bam-readcount
+#https://github.com/nickmiller-iit/DNA_Damage/blob/b15480d62d83571d5ef9c9cd7f1d0ef530205cee/summarize_readcounts.py
 #
 #The format of the bam_readcount output is a set of tab delimited columns
 #
@@ -12,6 +11,7 @@
 #	5) Base info field 1
 #	...
 #	5+n) Base info field n
+
 #
 #Each base info field contains sub fields separated by colons We are o ly interested in
 #the first two:
@@ -40,7 +40,8 @@ from __future__ import print_function
 import sys
 
 inFileName = sys.argv[1]
-print("\t".join(["chromosome", "position", "reference", "A", "C", "G", "T", "N", "+A", "+G", "+GG", "+GGG"]))
+print("\t".join(["chromosome", "position", "reference", "A", "C", "G", "T", "N",
+				 "+A", "+G", "+GG", "+GGG", "A+", "a", "C", "c", "G", "g", "T", "t", "+A", "+a", "+G", "+g", "+GG", "+gg" , "+GGG", "+ggg"]))
 inFile = open(inFileName, 'rU')
 
 for line in inFile:
@@ -51,9 +52,19 @@ for line in inFile:
 	for element in line[4:]:
 		base = element.split(':')[0]
 		count = element.split(':')[1]
+		
+
 		for i in range(0,9):
 			if base == outBases[i]:
 				outCounts[i] += int(count)
+    for line in inFile;
+    	line = line.split('\t')
+    	outBasesStd = ["A+","a", "C","c", "G", "g", "T", "t", "N", "+A", "+a", "+G", "+g", "+GG", "+gg" , "+GGG", "+ggg"]
+    	for ele in line[4:]:
+			_pos = ele.split(':')[5]
+			_neg = ele.split(':')[6]
+			print _pos
+            
 	print('\t'.join((outLine + [str(x) for x in outCounts])))
 
 inFile.close()
