@@ -105,7 +105,7 @@ def parser_readcount(args):
   #         print '{}\t{}'.format(key, row)
 
 
-  with open(args.infile[:-4]+'_parsed_6.csv', 'w+') as f:
+  with open(args.infile[:-4]+'_parsed.csv', 'w+') as f:
         writer = csv.writer(f, delimiter=",")
         keys = ["chr","ref",
                 "depth", "count", 
