@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # author: Sridhar
-# email:- sridhar@wuslt.edu
+# email:- sridhar@wustl.edu
 
 import os
 import argparse
