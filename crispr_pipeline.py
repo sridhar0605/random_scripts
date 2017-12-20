@@ -22,10 +22,6 @@ def main():
                         col4: guide rna')
     parser.add_argument('-o','--outdir', help='where do you want to write the results')
     parser.add_argument('-i', '--indir', help='where are the fastq files located')
-    parser.add_argument('-i', '--index', required=True, help='mm9 or hg19')
-    parser.add_argument('-a', '--adaptor', default='adaptor.fa',
-                        help='Fasta file containing adaptor sequneces (default: adaptor.fa)')
-    parser.add_argument('-t', '--threads', default=1, type=int, help='Threads to be used (default=: 1)')
 
     args = parser.parse_args()
     meta = parse_metainfo(args.meta)
