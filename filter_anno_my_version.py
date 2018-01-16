@@ -5,7 +5,7 @@ import csv
 # 1   4775960 4798536 +   ENSMUSG00000025903  Lypla1
 # 1   4831213 4857551 +   ENSMUSG00000025903  Lypla1
 # 1   4831213 4857551 +   ENSMUSG00000033813  Tcea1"""
-dat = open(r'/Users/sid/PycharmProjects/hope/annotations_try3.txt')
+dat = open(r'/Users/sid/PycharmProjects/annotations_try3.txt')
 data = dat.read()
 result = defaultdict(list)
 headers = ""
