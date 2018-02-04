@@ -46,7 +46,9 @@ def merge_readcount(args):
     _df2.to_csv('allMerged_transposed_combined_bias.csv')
     logger.info('Process Complete')
 
-#logger fuction can scale to any process
+#logger fuction can be scaled to any process
+#original code borrowed from
+#https://github.com/vivek1723/Dmatrix/blob/bdd75b1112b6490f3bda4735b2c6bb3505deca88/logSetup/logSetup.py
 def getlogger(logger_name):
   logger = logging.getLogger(logger_name)
   logger.setLevel(logging.DEBUG)
