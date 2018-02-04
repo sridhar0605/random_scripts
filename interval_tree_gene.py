@@ -51,15 +51,9 @@ with open('/data0/sridnona/eye/Mus_musculus/UCSC/mm9/Sequence/WholeGenomeFasta/m
 with open(binding_factor, 'w') as f :
      for k,v in mast.iteritems():
          for i in v:
-             
-         
-             gene = genome[k].search(i['start'],i['end'])
-             
-             
+         gene = genome[k].search(i['start'],i['end'])
              if gene:
                 print gene
                 for i in gene:
                     l = (i.data['chr'] + '\t' + i.data['gene'])  
-                                        
-                
                     f.write(''.join(l)+'\n')
